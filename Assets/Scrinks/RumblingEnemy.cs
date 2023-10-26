@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightEnemy : MonoBehaviour
+public class RumblingEnemy : MonoBehaviour
 {
     public float speed;
     private Rigidbody rb;
@@ -12,13 +12,11 @@ public class LightEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
-        InvokeRepeating("Lunge", 5, 5);
     }
 
-    void Lunge()
+    void Update()
     {
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        rb.AddForce(lookDirection * speed, ForceMode.Impulse);
-        rb.AddForce(Vector3.up, ForceMode.Impulse);
+        rb.AddForce(lookDirection * speed);
     }
 }

@@ -20,8 +20,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Vertical Movement
+
         float forwardInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+
+        //Horizontal Movement
+        playerRb.AddForce(focalPoint.transform.right * speed * horizontalInput);
+
+        //Jump
         if (Input.GetKeyDown(KeyCode.Space) && onFloor)
         {
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);

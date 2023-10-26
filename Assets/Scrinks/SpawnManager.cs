@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPreswag;
+    public GameObject chaser;
+    public GameObject dasher;
+    public GameObject rumbler;
     private float spawnRange = 9;
 
     void Start()
     {
-        Instantiate(enemyPreswag, GenerateSpawnPosition(), enemyPreswag.transform.rotation);
+        Instantiate(chaser, GenerateSpawnPosition(), chaser.transform.rotation);
+        Instantiate(dasher, GenerateSpawnPosition(), dasher.transform.rotation);
+        Instantiate(rumbler, GenerateSpawnPosition(), rumbler.transform.rotation);
     }
 
     private Vector3 GenerateSpawnPosition()
