@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class LungingEnemy : MonoBehaviour
 {
     public float speed;
     private Rigidbody rb;
@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
-        rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
     }
 
 
