@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3278064814658965911}
   - component: {fileID: 3278064814658965929}
   m_Layer: 0
-  m_Name: RushdownFoe
+  m_Name: SluggerBall
   m_TagString: Foe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4df671cc168f248924683ca1ce81b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3500
+  speed: 15
   ballLightPrep: {fileID: 4446128423361136273}
   ballLightLunge: {fileID: 8333191635824244417}
 --- !u!1 &4925367247260289539

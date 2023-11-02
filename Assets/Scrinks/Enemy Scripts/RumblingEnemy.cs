@@ -18,5 +18,6 @@ public class RumblingEnemy : MonoBehaviour
     {
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         rb.AddForce(lookDirection * speed);
+        if (transform.position.y < -10) { Destroy(gameObject); }
     }
 }

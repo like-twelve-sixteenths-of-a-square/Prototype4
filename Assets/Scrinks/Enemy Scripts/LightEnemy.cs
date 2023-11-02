@@ -17,6 +17,10 @@ public class LightEnemy : MonoBehaviour
         StartCoroutine(Repeating());
     }
 
+    private void Update()
+    {
+        if (transform.position.y < -10) { Destroy(gameObject); }
+    }
 
     IEnumerator Repeating()
     {
@@ -36,7 +40,7 @@ public class LightEnemy : MonoBehaviour
             yield return new WaitForSeconds(1);
 
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            rb.AddForce(lookDirection * speed, ForceMode.Impulse);
+            rb.AddForce(lookDirection * speed * 200, ForceMode.Impulse);
             rb.AddForce(Vector3.up, ForceMode.Impulse);
 
             yield return new WaitForSeconds(0.5f);

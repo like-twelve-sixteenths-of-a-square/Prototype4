@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour
         powerIndicator.transform.position = transform.position;
         //Heavy crown follows the top of the player with this script
         heavyCrown.transform.position = transform.position + new Vector3 (0, 0.125f, 0);
+
+        //Teleport if fallen
+        if (transform.position.y < -10)
+        {
+            transform.position = new Vector3(0, 5, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -66,9 +72,9 @@ public class PlayerController : MonoBehaviour
             heavyCrown.SetActive(true);
 
             //Makes the player heavy and retains speed
-            gameObject.GetComponent<Rigidbody>().mass *= 3;
-            speed *= 3;
-            jump *= 3;
+            gameObject.GetComponent<Rigidbody>().mass *= 5;
+            speed *= 5;
+            jump *= 5;
 
             //removes the powerup item
             Destroy(other.gameObject);
@@ -87,8 +93,8 @@ public class PlayerController : MonoBehaviour
         heavyCrown.gameObject.SetActive(false);
 
         //Returns normal mass and variables
-        gameObject.GetComponent<Rigidbody>().mass /= 3;
-        speed /= 3;
-        jump /= 3;
+        gameObject.GetComponent<Rigidbody>().mass /= 5;
+        speed /= 5;
+        jump /= 5;
     }
 }
