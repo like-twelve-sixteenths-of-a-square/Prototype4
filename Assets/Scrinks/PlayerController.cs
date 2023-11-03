@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
     {
         //Vertical Movement
         float forwardInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
 
         //Horizontal Movement
+        float horizontalInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(focalPoint.transform.right * speed * horizontalInput);
 
         //Jump
